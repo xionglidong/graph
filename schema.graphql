@@ -1,28 +1,9 @@
-type DataRetrieved @entity(immutable: true) {
-  id: Bytes!
-  requester: Bytes! # address
-  data: String! # string
-  timestamp: BigInt! # uint256
+type Deposit @entity(immutable: true) {
+  id: ID!
+  from: Bytes!
+  amount: BigInt!
+  note: String!
   blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
-
-type DataStored @entity(immutable: true) {
-  id: Bytes!
-  owner: Bytes! # address
-  data: String! # string
-  timestamp: BigInt! # uint256
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
-
-type OwnershipTransferred @entity(immutable: true) {
-  id: Bytes!
-  previousOwner: Bytes! # address
-  newOwner: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
+  timestamp: BigInt!
+  txHash: Bytes!
 }
